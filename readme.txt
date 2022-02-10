@@ -1,0 +1,1 @@
+This is a repository to store projects of the Java Development Bootcamp.
