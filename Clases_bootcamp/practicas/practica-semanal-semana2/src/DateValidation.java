@@ -11,6 +11,10 @@ public class DateValidation
 	
 	private final byte MIN_DAY = 1;
 	
+	private final short FOUR_YEARS = 4;
+	private final short ONE_HUNDRED_YEARS = 100;
+	private final short FOUR_HUNDRED_YEARS = 400;
+	
 	private final byte[] MAX_DAYS_NORMAL_MONTH = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 	
 	
@@ -40,11 +44,11 @@ public class DateValidation
 		
 //		Año bisiesto es el divisible entre 4, salvo que sea año secular -último de cada siglo, 
 //		terminado en «00»-, en cuyo caso también ha de ser divisible entre 400.
-		if ( (yearValue % 4 == 0) ) 
+		if ( (yearValue % this.FOUR_YEARS == 0) ) 
 		{
 			//año terminado en 00 que es bisiesto
-			if ( (yearValue % 100 == 0) )
-				if ((yearValue % 400 == 0)) 
+			if ( (yearValue % this.ONE_HUNDRED_YEARS == 0) )
+				if ((yearValue % this.FOUR_HUNDRED_YEARS == 0)) 
 					return ( dayValue >=  this.MIN_DAY && dayValue <= (this.MAX_DAYS_NORMAL_MONTH[ monthValue - 1 ] + 1) );
 				else 
 					return ( dayValue >= this.MIN_DAY && dayValue <= (this.MAX_DAYS_NORMAL_MONTH[ monthValue - 1 ]) );
