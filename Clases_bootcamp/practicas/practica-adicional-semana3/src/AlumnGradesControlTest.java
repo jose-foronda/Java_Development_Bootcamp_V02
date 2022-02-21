@@ -24,7 +24,7 @@ public class AlumnGradesControlTest {
 		
 		//user input
 		Scanner userInputScanner = new Scanner(System.in);
-		
+
 		System.out.println("**** Program to Control test scores of alumns ****");
 		System.out.println();
 		System.out.println();
@@ -45,6 +45,8 @@ public class AlumnGradesControlTest {
 		{ 
 			alumnCounter++;
 			
+			System.out.println();
+			System.out.println();
 			System.out.print("Please enter the FIRST-NAME of the ALUMN #" + alumnCounter + " : ");
 			String AlumnfirstName = userInputScanner.next();
 			
@@ -57,8 +59,13 @@ public class AlumnGradesControlTest {
 				System.out.print("Please enter the TEST-NUMBER for the ALUMN #" + alumnCounter + " : ");		
 				byte testId = userInputScanner.nextByte();
 				
-				System.out.print("Please enter the GRADE ( 0=< grade <= 10) obtained for the TEST " + testId + " for the ALUMN #" + alumnCounter + " : ");		
-				float testGrade = userInputScanner.nextFloat();
+				float testGrade = 0;
+				do 
+				{
+					System.out.print("Please enter the GRADE ( 0=< grade <= 10) obtained for the TEST " + testId + " for the ALUMN #" + alumnCounter + " : ");		
+					testGrade = Float.parseFloat(userInputScanner.next());
+				} while ( !((testGrade >= 0) && (testGrade <= 10)) );
+
 				
 				alumnTests[i] = new Test(testId, testGrade);
 			}
