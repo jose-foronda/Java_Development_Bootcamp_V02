@@ -30,12 +30,12 @@ public class AlumnGradesControlTest {
 		System.out.println();
 		
 		
-		System.out.println("Please enter the number of alumns to process: ");
+		System.out.print("Please enter the NUMBER OF ALUMNS to process: ");
 		byte alumnNumber = userInputScanner.nextByte();
 		
-		System.out.println();
-		System.out.println();
-		System.out.println("Please enter the number of tests per alumn to process: ");
+//		System.out.println();
+//		System.out.println();
+		System.out.print("Please enter the NUMBER OF TESTS per-alumn to process: ");
 		byte testNumber = userInputScanner.nextByte();
 		
 		ArrayList<Alumno> alumnList = new ArrayList<Alumno>();
@@ -45,19 +45,19 @@ public class AlumnGradesControlTest {
 		{ 
 			alumnCounter++;
 			
-			System.out.println("Please enter the first name of the alumn #" + alumnCounter + " : ");
+			System.out.print("Please enter the FIRST-NAME of the ALUMN #" + alumnCounter + " : ");
 			String AlumnfirstName = userInputScanner.next();
 			
-			System.out.println("Please enter the last name of the alumn #" + alumnCounter + " : ");
+			System.out.print("Please enter the LAST-NAME of the ALUMN #" + alumnCounter + " : ");
 			String AlumnLastName = userInputScanner.next();
 			
 			Test[] alumnTests = new Test[testNumber];
 			for (int i = 0; i < testNumber; i++) 
 			{
-				System.out.println("Please enter the number of the test for the alumn #" + alumnCounter + " : ");		
+				System.out.print("Please enter the TEST-NUMBER for the ALUMN #" + alumnCounter + " : ");		
 				byte testId = userInputScanner.nextByte();
 				
-				System.out.println("Please enter the grade ( 0=< grade <= 10) obtained for the test " + testId + " for the alumn #" + alumnCounter + " : ");		
+				System.out.print("Please enter the GRADE ( 0=< grade <= 10) obtained for the TEST " + testId + " for the ALUMN #" + alumnCounter + " : ");		
 				float testGrade = userInputScanner.nextFloat();
 				
 				alumnTests[i] = new Test(testId, testGrade);
@@ -70,17 +70,22 @@ public class AlumnGradesControlTest {
 		userInputScanner.close();
 		
 		//Listing information section
+		System.out.println();
+		System.out.println();
 		System.out.println("*** the entered alumns and their grades are *** ");
 		System.out.println();
 		System.out.println();
 		
 		for (int i = 0; i < alumnList.size(); i++) 
 		{
-			System.out.print(i + "- name: " + alumnList.get(i).getFirstName() + ". Last name: " + alumnList.get(i).getLastName());
-			
+			System.out.print((i + 1) + "- name: " + alumnList.get(i).getFirstName() + ". Last-name: " + alumnList.get(i).getLastName() + ".   ");
+			System.out.println();
 			for (int j = 0; j < testNumber; j++) {
-				
+				System.out.print("| test" + (j + 1) + " = " + alumnList.get(i).getTestArray()[j].getTestScore() + "  |");
 			}
+			
+			System.out.println();
+			System.out.println();
 		}
 		
 		

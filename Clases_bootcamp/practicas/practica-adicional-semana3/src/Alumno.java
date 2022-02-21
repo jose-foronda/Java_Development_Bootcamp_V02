@@ -33,4 +33,14 @@ public class Alumno
 	{
 		this.lastName = newLastName;
 	}
+	
+	public Test[] getTestArray()
+	{
+		return this.studentTests;
+	}
+	
+	public void setTestArray(Test[] newTestArray)
+	{
+		this.studentTests = newTestArray;
+	}
 }
