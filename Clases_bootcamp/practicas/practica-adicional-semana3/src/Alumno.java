@@ -3,12 +3,13 @@ public class Alumno
 {
 	private String firstName = " ";
 	private String lastName = " ";
-//	Test[] studentTests;
+	Test[] studentTests = null;
 	
-	public Alumno(String fn, String ln) 
+	public Alumno(String fn, String ln, Test[] scoreTest) 
 	{
 		this.firstName = fn;
 		this.lastName = ln;
+		this.studentTests = scoreTest;
 	}
 	
 	public String getFirstName()
