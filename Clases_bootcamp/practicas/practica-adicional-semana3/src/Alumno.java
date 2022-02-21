@@ -56,4 +56,9 @@ public class Alumno
 		
 		this.studentMeanScore /= (float)(this.studentTests.length);
 	}
+	
+	public float getMeanScore()
+	{
+		return this.studentMeanScore;
+	}
 }
