@@ -49,12 +49,16 @@ public class Alumno
 	{	
 		this.studentMeanScore = 0;
 		
-		for (int i = 0; i < this.studentTests.length; i++) 
+		int studentTestsLength = this.studentTests.length;
+		
+		float divider = studentTestsLength == 0 ? 1 : studentTestsLength;
+		
+		for (int i = 0; i < studentTestsLength; i++) 
 		{
 			this.studentMeanScore += this.studentTests[i].getTestScore();
 		}
-		
-		this.studentMeanScore /= (float)(this.studentTests.length);
+		 
+		this.studentMeanScore /= divider;
 	}
 	
 	public float getMeanScore()

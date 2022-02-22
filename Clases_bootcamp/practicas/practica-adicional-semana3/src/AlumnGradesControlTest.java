@@ -100,10 +100,55 @@ public class AlumnGradesControlTest {
 		System.out.println();
 		System.out.println("*** Alumns with the best mean-score *** ");
 		
+		
 		for (int i = 0; i < alumnList.size(); i++) 
 		{
-			
+			alumnList.get(i).computeMeanScore();
 		}
+		
+		
+		int listPositionFirst = 0;
+		float meanScoreFirstPosition = 0;
+		
+		int listPositionSecond = 0;
+		float meanScoreSecondPosition = 0;
+		
+		listPositionFirst = 0;
+		meanScoreFirstPosition = alumnList.get(0).studentMeanScore;
+		
+//		for (int i = 0; i < alumnList.size() - 1 ; i++) 
+//		{
+//			if ( !(meanScoreFirstPosition > alumnList.get(i + 1).studentMeanScore) ) {
+//				listPositionFirst = i + 1;
+//				meanScoreFirstPosition = alumnList.get(i + 1).studentMeanScore;
+//			}
+//		}
+		
+		for (int i = 0; i < alumnList.size() - 1 ; i++) 
+		{
+			for (int j = 0; j < i - 1; j++) {
+				
+			}
+			if ( !(meanScoreFirstPosition > alumnList.get(i + 1).studentMeanScore) ) {
+				listPositionFirst = i + 1;
+				meanScoreFirstPosition = alumnList.get(i + 1).studentMeanScore;
+			}
+		}
+		
+		
+		System.out.println();
+		System.out.println();
+		System.out.println("Alumn with the best mean-score in this list is :  " + alumnList.get(listPositionFirst).getFirstName() + 
+				" " + alumnList.get(listPositionFirst).getLastName() + " with mean-score: " + meanScoreFirstPosition);
+		
+		
+//		alumnList.get(0).computeMeanScore();
+//		float meanScore = alumnList.get(0).getMeanScore();
+//		System.out.println("mean Score is : " + meanScore);
+//		for (int i = 0; i < alumnList.size(); i++) 
+//		{
+//			
+//		}
 		
 //		System.out.println((1+alumnNumber));
 
