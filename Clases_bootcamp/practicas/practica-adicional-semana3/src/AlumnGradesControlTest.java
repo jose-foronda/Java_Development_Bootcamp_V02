@@ -104,41 +104,17 @@ public class AlumnGradesControlTest {
 			System.out.println();
 		}
 		
-		
-//		System.out.println();
-//		System.out.println();
-//		System.out.println("*** Alumns with the best mean-score *** ");
-		
-
-		
-		
-//		int listPositionFirst = 0;
-//		float meanScoreFirstPosition = 0;
-//		
-//		int listPositionSecond = 0;
-//		float meanScoreSecondPosition = 0;
-//		
-//		listPositionFirst = 0;
-//		meanScoreFirstPosition = alumnList.get(0).studentMeanScore;
-		
-//		for (int i = 0; i < alumnList.size() - 1 ; i++) 
-//		{
-//			if ( !(meanScoreFirstPosition > alumnList.get(i + 1).studentMeanScore) ) {
-//				listPositionFirst = i + 1;
-//				meanScoreFirstPosition = alumnList.get(i + 1).studentMeanScore;
-//			}
-//		}
-		
-		Alumno aux1;
+		Alumno auxAlumn;
+		// Sorts the mean-score values.
 		for (int i = 0; i < alumnList.size(); i++) 
 		{
 			for (int j = 0; j < alumnList.size() - 1; j++) 
 			{
 				if( alumnList.get(j).getMeanScore() > alumnList.get(j + 1).getMeanScore() )
 				{
-					aux1 = alumnList.get(j + 1);
-					alumnList.set( j + 1, alumnList.get(j));
-					alumnList.set(j, aux1);
+					auxAlumn = alumnList.get(j + 1);
+					alumnList.set( j + 1, alumnList.get(j) );
+					alumnList.set(j, auxAlumn);
 				}
 			}
 		}
@@ -164,21 +140,116 @@ public class AlumnGradesControlTest {
 			System.out.println();
 		}
 		
-//		System.out.println();
-//		System.out.println();
-//		System.out.println("Alumn with the best mean-score in this list is :  " + alumnList.get(listPositionFirst).getFirstName() + 
-//				" " + alumnList.get(listPositionFirst).getLastName() + " with mean-score: " + meanScoreFirstPosition);
+		
+		System.out.println();
+		System.out.println();
+		System.out.println("*** Alumns with the lowest mean-score *** ");
+		System.out.println();
+		System.out.println();
+		
+		float minScore = alumnList.get(0).getMeanScore();
+		byte countLowestScore = 1;
+		for (int i = 0; i < alumnList.size() - 1; i++) 
+		{
+			if ( minScore == alumnList.get(i + 1).getMeanScore() ) 
+			{
+				countLowestScore++;
+			}
+		}
+		
+		for (int i = 0; i < countLowestScore ; i++) 
+		{
+			System.out.print((i + 1) + "- name: " + alumnList.get(i).getFirstName() + ". Last-name: " + alumnList.get(i).getLastName() + ".   ");
+			System.out.println();
+			for (int j = 0; j < testNumber; j++) {
+				System.out.print("| test" + (j + 1) + " = " + alumnList.get(i).getTestArray()[j].getTestScore() + "  |");
+			}
+			
+			System.out.print(" *mean-score: " + alumnList.get(i).getMeanScore());
+	
+			System.out.println();
+			System.out.println();			
+		}
 		
 		
-//		alumnList.get(0).computeMeanScore();
-//		float meanScore = alumnList.get(0).getMeanScore();
-//		System.out.println("mean Score is : " + meanScore);
-//		for (int i = 0; i < alumnList.size(); i++) 
-//		{
-//			
-//		}
+		System.out.println();
+		System.out.println();
+		System.out.println("*** Alumns with the highest mean-score *** ");
+		System.out.println();
+		System.out.println();
 		
-//		System.out.println((1+alumnNumber));
+		float maxScore = alumnList.get(alumnList.size() - 1).getMeanScore();
+		byte countHighestScore = 1;
+		for (int i = alumnList.size() - 1; i > 0; i--) 
+		{
+			if ( maxScore == alumnList.get(i - 1).getMeanScore() ) 
+			{
+				countHighestScore++;
+			}
+		}
+		
+		for (int i = alumnList.size() - 1; i >= alumnList.size() - countHighestScore ; i--) 
+		{
+			System.out.print( "- name: " + alumnList.get(i).getFirstName() + ". Last-name: " + alumnList.get(i).getLastName() + ".   ");
+			System.out.println();
+			for (int j = 0; j < testNumber; j++) {
+				System.out.print("| test" + (j + 1) + " = " + alumnList.get(i).getTestArray()[j].getTestScore() + "  |");
+			}
+			
+			System.out.print(" *mean-score: " + alumnList.get(i).getMeanScore());
+	
+			System.out.println();
+			System.out.println();			
+		}
+				
+		
+		
+		System.out.println();
+		System.out.println();
+		System.out.println("*** Alumns that PASS the course (mean-score >=7) *** ");
+		System.out.println();
+		System.out.println();
+		
+		for (int i = alumnList.size() - 1; i >= 0; i--) 
+		{
+			if (alumnList.get(i).getMeanScore() >= 7) 
+			{
+				System.out.print( "- name: " + alumnList.get(i).getFirstName() + ". Last-name: " + alumnList.get(i).getLastName() + ".   ");
+				System.out.println();
+				for (int j = 0; j < testNumber; j++) {
+					System.out.print("| test" + (j + 1) + " = " + alumnList.get(i).getTestArray()[j].getTestScore() + "  |");
+				}
+				
+				System.out.print(" *mean-score: " + alumnList.get(i).getMeanScore());
+		
+				System.out.println();
+				System.out.println();					
+			}
+		}
+		
+		System.out.println();
+		System.out.println();
+		System.out.println("*** Alumns that FAIL the course (mean-score < 7) *** ");
+		System.out.println();
+		System.out.println();
+		
+		for (int i = alumnList.size() - 1; i >= 0; i--) 
+		{
+			if (alumnList.get(i).getMeanScore() < 7) 
+			{
+				System.out.print( "- name: " + alumnList.get(i).getFirstName() + ". Last-name: " + alumnList.get(i).getLastName() + ".   ");
+				System.out.println();
+				for (int j = 0; j < testNumber; j++) {
+					System.out.print("| test" + (j + 1) + " = " + alumnList.get(i).getTestArray()[j].getTestScore() + "  |");
+				}
+				
+				System.out.print(" *mean-score: " + alumnList.get(i).getMeanScore());
+		
+				System.out.println();
+				System.out.println();					
+			}
+		}
+		
 
 	}
 
