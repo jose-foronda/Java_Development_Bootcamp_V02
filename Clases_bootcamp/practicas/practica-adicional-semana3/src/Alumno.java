@@ -3,8 +3,8 @@ public class Alumno
 {
 	private String firstName = " ";
 	private String lastName = " ";
-	Test[] studentTests = null;
-	float studentMeanScore = 0;
+	private Test[] studentTests = null;
+	private float studentMeanScore = 0;
 	
 	public Alumno(String fn, String ln, Test[] scoreTest) 
 	{

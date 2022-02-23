@@ -31,9 +31,7 @@ public class AlumnGradesControlTest {
 		System.out.print("Please enter the NUMBER OF ALUMNS to process: ");
 		byte alumnNumber = userInputScanner.nextByte();
 		userInputScanner.nextLine();
-		
-//		System.out.println();
-//		System.out.println();
+ 
 		System.out.print("Please enter the NUMBER OF TESTS per-alumn to process: ");
 		byte testNumber = userInputScanner.nextByte();
 		userInputScanner.nextLine();
@@ -49,12 +47,10 @@ public class AlumnGradesControlTest {
 			System.out.println();
 			System.out.print("Please enter the FIRST-NAME of the ALUMN #" + alumnCounter + " : ");
 			String AlumnfirstName = userInputScanner.nextLine();
-//			userInputScanner.nextLine();
-			
+ 			
 			System.out.print("Please enter the LAST-NAME of the ALUMN #" + alumnCounter + " : ");
 			String AlumnLastName = userInputScanner.nextLine();
-//			userInputScanner.nextLine();
-						
+ 						
 			Test[] alumnTests = new Test[testNumber];
 			for (int i = 0; i < testNumber; i++) 
 			{
@@ -87,12 +83,13 @@ public class AlumnGradesControlTest {
 		System.out.println();
 		System.out.println();
 		
-		//Compute the mean score for each alumn
+		//Compute the mean-score for each Alumn instance.
 		for (int i = 0; i < alumnList.size(); i++) 
 		{
 			alumnList.get(i).computeMeanScore();
 		}
 		
+		//Prints each Alumn instance and the associated information
 		for (int i = 0; i < alumnList.size(); i++) 
 		{
 			System.out.print((i + 1) + "- name: " + alumnList.get(i).getFirstName() + ". Last-name: " + alumnList.get(i).getLastName() + ".   ");
@@ -103,7 +100,6 @@ public class AlumnGradesControlTest {
 			
 			System.out.print(" *mean-score: " + alumnList.get(i).getMeanScore());
 	
-			
 			System.out.println();
 			System.out.println();
 		}
@@ -138,7 +134,7 @@ public class AlumnGradesControlTest {
 		{
 			for (int j = 0; j < alumnList.size() - 1; j++) 
 			{
-				if( alumnList.get(j).studentMeanScore > alumnList.get(j + 1).studentMeanScore )
+				if( alumnList.get(j).getMeanScore() > alumnList.get(j + 1).getMeanScore() )
 				{
 					aux1 = alumnList.get(j + 1);
 					alumnList.set( j + 1, alumnList.get(j));
@@ -162,7 +158,7 @@ public class AlumnGradesControlTest {
 				System.out.print("| test" + (j + 1) + " = " + alumnList.get(i).getTestArray()[j].getTestScore() + "  |");
 			}
 			
-			System.out.print( " -mean score: " + alumnList.get(i).studentMeanScore);
+			System.out.print( " -mean score: " + alumnList.get(i).getMeanScore());
 			
 			System.out.println();
 			System.out.println();
