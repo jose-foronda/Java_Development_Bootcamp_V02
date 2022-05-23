@@ -6,6 +6,7 @@ public class CustomCollection<T> {
 	//Helper private fields
 	private int size = 5;
 	private int elementCounter;
+	private T removedElement;
 	
 	//Custom Collection
 	private T[] customArray;
@@ -49,8 +50,12 @@ public class CustomCollection<T> {
 		return elementCounter == 0;
 	}
 	
-	public void remove(T element) {
+	public T remove(T element) {
 		removeCollectionElements(matchingElementsRemove(element)); 
+		
+		T removedElementReturned = removedElement;
+		removedElement = null;
+		return removedElementReturned;
 	}
 	
 	public void removeAll(T element) {
@@ -88,11 +93,11 @@ public class CustomCollection<T> {
 	
 	@Override
 	public String toString() {
-		return "CustomCollection [size=" + size + ", customArray=" + Arrays.toString(toStringCollection()) + ", elementCounter="
+		return "CustomCollection " + Arrays.toString(getCollection()) + " ---> elementCounter="
 				+ elementCounter + "]";
 	}
 	
-	private T[] toStringCollection() { 
+	private T[] getCollection() { 
 		return Arrays.copyOfRange(customArray, 0, elementCounter);		
 	}
 	
@@ -101,6 +106,7 @@ public class CustomCollection<T> {
 		
 		for (int i = 0; i < elementCounter; i++) {
 			if (customArray[i].equals(element)) {
+				removedElement = element;
 				matchingCounter.addLast(i);
 				return matchingCounter;
 			}
