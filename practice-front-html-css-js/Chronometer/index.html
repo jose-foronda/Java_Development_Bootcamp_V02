@@ -1,12 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Chronometer</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    
+    <h1> Chronometer </h1>
+
+    <!-- <div>
+        <input type="text" name="chronometer-display" id="chronometer-display" readonly>
+    </div> -->
+
+    <div id="container" class="container-box"> 
+        <div class="box">
+            <div id="days">
+                00
+            </div>
+            <div>
+                :
+            </div>
+            <div id="hours">
+                00
+            </div>
+            <div>
+                :
+            </div>
+            <div id="minutes">
+                00
+            </div>
+            <div>
+                :
+            </div>
+            <div id="seconds">
+                00
+            </div>
+        </div> 
+    </div>
+
+    <div class="wrapper-box">
+        <div class="wrapper">
+            <button id="start" onclick="startChronometer()"> start </button>
+            <button id="pause" onclick="pauseChronometer()"> pause </button>
+            <button id="start" onclick="clearChronometer()"> stop </button>
+        </div>
+    </div>
+
+    <script src="script/chronometerBehavior.js"></script>
 </body>
+
+
 </html>

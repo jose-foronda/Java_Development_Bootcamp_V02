@@ -1,0 +1,42 @@
+h1{
+    text-align: center;
+}
+
+.box {
+    display: flex;
+    width: 100%;
+    justify-content:center;
+    font-size: 300%;
+}
+
+/* .container-box{
+    display:flex;
+    width: 100%;
+    justify-content: space-evenly;
+    background-color: aqua;
+    font-size: 300%;
+} */
+
+/* #container {
+    width: 50%; 
+    background-color: aqua; 
+    align-items:stretch;
+} */
+
+.wrapper{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+   
+     /* source: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout */
+    grid-column: 2 / 3; /* start_column / end_column */
+    grid-row: 1 / 2; /* start_row / end_row */ 
+
+    column-gap: 2%;
+}
+
+.wrapper-box{
+    display: grid;
+    background-color:aqua;
+    grid-template-columns: 1fr 1fr 1fr;
+}
