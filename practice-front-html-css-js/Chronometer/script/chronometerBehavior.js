@@ -1,5 +1,9 @@
 var intervalID = 0;
 
+let soundSelector = true;
+const tick_audio = document.getElementById("tick_audio");
+const tock_audio = document.getElementById("tock_audio"); 
+
 const MAX_SECONDS = 60;
 const MAX_MINUTES = 60;
 const MAX_HOURS = 24;
@@ -16,11 +20,13 @@ const hoursId = "hours";
 const daysId = "days";
 
 function startChronometer() {
+    pauseChronometer();
    intervalID = setInterval(addSecond, 1000);
 }
 
 function addSecond() {
     seconds++;
+    SoundReproduction();
     if (seconds < MAX_SECONDS) {
         updateScale(secondsId, seconds);
     } else {
@@ -87,4 +93,13 @@ function clearChronometer() {
     scaleToZero(minutesId);
     scaleToZero(hoursId);
     scaleToZero(daysId);
+}
+
+function SoundReproduction() {
+    if (soundSelector) {
+        tick_audio.play();
+    } else {
+        tock_audio.play(); 
+    }
+    soundSelector = !soundSelector;
 }
