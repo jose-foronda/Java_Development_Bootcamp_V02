@@ -16,7 +16,7 @@
         <input type="text" name="chronometer-display" id="chronometer-display" readonly>
     </div> -->
 
-    <div id="container" class="container-box"> 
+    <!-- <div id="container" class="container-box"> 
         <div class="box">
             <div id="days">
                 00
@@ -40,16 +40,55 @@
                 00
             </div>
         </div> 
-    </div>
+    </div> -->
 
     <div class="wrapper-box">
-        <div class="wrapper">
+        <div class="time-wrapper">  
+                <div id="days">
+                    00
+                </div>
+                <div>
+                    :
+                </div>
+                <div id="hours">
+                    00
+                </div>
+                <div>
+                    :
+                </div>
+                <div id="minutes">
+                    00
+                </div>
+                <div>
+                    :
+                </div>
+                <div id="seconds">
+                    00
+                </div> 
+        </div>
+        <div class="divider-wrapper">
+            <div id="day-tag">
+                day
+            </div>
+            <div id="hour-tag">
+                hour
+            </div>
+            <div id="min-tag">
+                min
+            </div>
+            <div id="sec-tag">
+                sec
+            </div>
+        </div>
+
+        <div class="wrapper-control">
             <button id="start" onclick="startChronometer()"> start </button>
             <button id="pause" onclick="pauseChronometer()"> pause </button>
             <button id="start" onclick="clearChronometer()"> stop </button>
         </div>
     </div>
 
+    <!-- The audio elements are hidden -->
     <div>
         <audio id="tick_audio" hidden>
             <source src="sounds/1_tick.mp3" type="audio/mpeg">
