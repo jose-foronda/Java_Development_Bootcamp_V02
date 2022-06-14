@@ -1,10 +1,15 @@
-body{
-    background-color: #37475A; /*#37475A;   #232F3E*/
+html {
+    font-size: 100%; 
+}
+
+body {
+    background-color: #37475A;
+    /*#37475A;   #232F3E*/
     width: 100%;
     height: 100%;
 }
 
-h1{
+h1 {
     text-align: center;
 }
 
@@ -32,74 +37,144 @@ h1{
     text-align: center;
 } */
 
-.divider-wrapper{
-      /* source: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout */
-      display: grid;
-      grid-template-columns: repeat(3, 2fr 1fr) 2fr;
+.divider-wrapper {
+    /* source: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout */
+    display: grid;
+    grid-template-columns: repeat(3, 2fr 1fr) 2fr;
 
 
-      grid-column: 2 / 3; /* start_column / end_column */
-      grid-row: 2 / 3; /* start_row / end_row */ 
+    grid-column: 1 / 3;
+    /* start_column / end_column */
+    grid-row: 2 / 3;
+    /* start_row / end_row */
 
 }
 
-#day-tag{
-    grid-column: 1 / 2; /* start_column / end_column */
-    grid-row: 1 / 2; /* start_row / end_row */   
+#day-tag {
+    grid-column: 1 / 2;
+    /* start_column / end_column */
+    grid-row: 1 / 2;
+    /* start_row / end_row */
 }
 
-#hour-tag{
-    grid-column: 3 / 4; /* start_column / end_column */
-    grid-row: 1 / 2; /* start_row / end_row */   
+#hour-tag {
+    grid-column: 3 / 4;
+    /* start_column / end_column */
+    grid-row: 1 / 2;
+    /* start_row / end_row */
 }
 
-#min-tag{
-    grid-column: 5 / 6; /* start_column / end_column */
-    grid-row: 1 / 2; /* start_row / end_row */   
+#min-tag {
+    grid-column: 5 / 6;
+    /* start_column / end_column */
+    grid-row: 1 / 2;
+    /* start_row / end_row */
 }
 
-#sec-tag{
-    grid-column: 7 / 8; /* start_column / end_column */
-    grid-row: 1 / 2; /* start_row / end_row */   
+#sec-tag {
+    grid-column: 7 / 8;
+    /* start_column / end_column */
+    grid-row: 1 / 2;
+    /* start_row / end_row */
 }
 
-.time-wrapper{
-    font-weight: bold;
+.time-wrapper {
+
+    font-weight: bold; 
     font-size: 2rem;
     display: grid;
     grid-auto-rows: auto;
     width: 100%;
     grid-template-columns: repeat(3, 2fr 1fr) 2fr;
-   
-     /* source: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout */
-    grid-column: 2 / 3; /* start_column / end_column */
-    grid-row: 1 / 2; /* start_row / end_row */ 
+
+    /* source: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout */
+    grid-column: 1 / 2;
+    /* start_column / end_column */
+    grid-row: 1 / 2;
+    /* start_row / end_row */
 
     column-gap: 2%;
 }
 
-.wrapper-control{
+.wrapper-control,
+.time-wrapper,
+.divider-wrapper {
+    background-color: #007EB9;
+    box-sizing: border-box;
+    padding: 5%;
+}
+
+.wrapper-control {
     display: grid;
     grid-auto-rows: auto;
     grid-auto-columns: max-content;
     width: 100%;
     grid-template-columns: 1fr 1fr 1fr;
-   
-     /* source: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout */
-    grid-column: 2 / 3; /* start_column / end_column */
-    grid-row: 3 / 4; /* start_row / end_row */ 
+
+    /* source: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout */
+    grid-column: 1 / 2;
+    /* start_column / end_column */
+    grid-row: 3 / 4;
+    /* start_row / end_row */
 
     column-gap: 2%;
 }
 
-.wrapper-box{
-    margin-top: 10%;
-    text-align: center;
+.wrapper-box {
+    /* margin-top: 10%;     */
+    text-align: center; 
+    margin: 1%; 
+    border: 5px solid;  
+    border-radius: 5%;
     font-weight: bold;
     display: grid;
-    background-color:aqua;
-    grid-template-columns: 1fr 1fr 1fr;
+    background-color: #37475A; 
+    grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-}
- 
 
+    /* grid-auto-rows: 100%; */
+    grid-column: 2 / 3;
+    grid-row: 1/2;
+}
+
+.screen-box{
+    margin-top: 10%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: #37475A;
+}
+
+/* .grid-element{ 
+    box-sizing: border-box;
+    border-right: 2px solid red;
+    
+} */
+
+.control {
+    box-sizing: border-box;
+    font-size: 1rem;
+    font-weight: bold;
+
+    border-radius: 25% 10%;
+    border: 1px solid #527FFF;
+    background-color: #E86209;
+}
+
+.control:hover {
+    border-radius: 10%/50%;
+    background-color: #51557E;
+}
+
+
+#start:hover {
+    border: 1px solid green;
+}
+
+#pause:hover {
+    border: 1px solid #007EB9;
+
+}
+
+#stop:hover {
+    border: 1px solid #B20600;
+}

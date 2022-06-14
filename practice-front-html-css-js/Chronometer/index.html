@@ -42,8 +42,9 @@
         </div> 
     </div> -->
 
-    <div class="wrapper-box">
-        <div class="time-wrapper">  
+    <div class="screen-box">
+        <div class="wrapper-box ">
+            <div class="time-wrapper grid-element">
                 <div id="days">
                     00
                 </div>
@@ -64,27 +65,28 @@
                 </div>
                 <div id="seconds">
                     00
-                </div> 
-        </div>
-        <div class="divider-wrapper">
-            <div id="day-tag">
-                day
+                </div>
             </div>
-            <div id="hour-tag">
-                hour
+            <div class="divider-wrapper grid-element">
+                <div id="day-tag">
+                    day
+                </div>
+                <div id="hour-tag">
+                    hour
+                </div>
+                <div id="min-tag">
+                    min
+                </div>
+                <div id="sec-tag">
+                    sec
+                </div>
             </div>
-            <div id="min-tag">
-                min
-            </div>
-            <div id="sec-tag">
-                sec
-            </div>
-        </div>
 
-        <div class="wrapper-control">
-            <button id="start" onclick="startChronometer()"> start </button>
-            <button id="pause" onclick="pauseChronometer()"> pause </button>
-            <button id="start" onclick="clearChronometer()"> stop </button>
+            <div class="wrapper-control grid-element">
+                <button id="start" class="control" onclick="startChronometer()"> Start </button>
+                <button id="pause" class="control" onclick="pauseChronometer()"> Pause </button>
+                <button id="stop" class="control" onclick="clearChronometer()"> Stop </button>
+            </div>
         </div>
     </div>
 
@@ -93,17 +95,20 @@
         <audio id="tick_audio" hidden>
             <source src="sounds/1_tick.mp3" type="audio/mpeg">
             <p>Your browser doesn't support HTML5 audio. Here is
-               a <a href="sounds/1_tick.mp3">link to the audio</a> instead.</p>
-          </audio>
+                a <a href="sounds/1_tick.mp3">link to the audio</a> instead.</p>
+        </audio>
     </div>
     <div>
         <audio id="tock_audio" hidden>
             <source src="sounds/2_tock.mp3" type="audio/mpeg">
             <p>Your browser doesn't support HTML5 audio. Here is
-               a <a href="sounds/2_tock.mp3">link to the audio</a> instead.</p>
-          </audio>
+                a <a href="sounds/2_tock.mp3">link to the audio</a> instead.</p>
+        </audio>
     </div>
-    
+
+
+
+
 
     <script src="script/chronometerBehavior.js"></script>
 </body>
