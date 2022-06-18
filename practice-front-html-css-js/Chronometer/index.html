@@ -58,12 +58,18 @@
             </div>
 
             <div class="wrapper-control grid-element">
-                <button id="start" class="control" onclick="startChronometer()">
+                <div class="control start-pause">
+                    <button id="start" class="control control-pause-start" onclick="startPauseChronometer()">
+                        <i class="material-icons">smart_display</i>
+                    </button>
+                </div>
+
+                <!-- <button id="start" class="control" onclick="startChronometer()">
                     <i class="material-icons">smart_display</i>
-                </button>
-                <button id="pause" class="control" onclick="pauseChronometer()">
+                </button> -->
+                <!-- <button id="pause" class="control" onclick="pauseChronometer()">
                     <i class="material-symbols-outlined">pause_presentation</i>
-                </button>
+                </button> -->
                 <button id="stop" class="control" onclick="clearChronometer()">
                     <span class="material-symbols-sharp">
                         stop_circle
@@ -88,8 +94,6 @@
                 a <a href="sounds/2_tock.mp3">link to the audio</a> instead.</p>
         </audio>
     </div>
-
-
 
 
 

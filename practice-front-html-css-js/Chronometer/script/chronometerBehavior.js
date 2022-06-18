@@ -2,7 +2,7 @@ var intervalID = 0;
 
 let soundSelector = true;
 const tick_audio = document.getElementById("tick_audio");
-const tock_audio = document.getElementById("tock_audio"); 
+const tock_audio = document.getElementById("tock_audio");
 
 const MAX_SECONDS = 60;
 const MAX_MINUTES = 60;
@@ -19,9 +19,48 @@ const minutesId = "minutes";
 const hoursId = "hours";
 const daysId = "days";
 
-function startChronometer() {
+const pauseButtonHTML = '<i class="material-symbols-outlined">pause_presentation</i>';
+const playButtonHTML = ' <i class="material-icons">smart_display</i>';
+
+var startPauseState = true;
+
+function startPauseChronometer() {
+    switch (startPauseState) {
+        case true:
+            startPauseState = false;
+            onStartChronometer();
+            break;
+
+        default:
+            startPauseState = true;
+            onPauseChronometer();
+            break;
+    }
+}
+
+function onPauseChronometer() {
     pauseChronometer();
-   intervalID = setInterval(addSecond, 1000);
+    changeToPlayButton();
+}
+
+function onStartChronometer() {
+    changeToPauseButton();
+    pauseChronometer();
+    intervalID = setInterval(addSecond, 1000);
+}
+
+function pauseChronometer() { 
+    clearInterval(intervalID); 
+}
+
+function changeToPauseButton() { 
+    let startPauseHTMLelement = document.getElementsByClassName("control-pause-start");
+    startPauseHTMLelement[0].innerHTML = pauseButtonHTML;
+}
+
+function changeToPlayButton() {
+    let startPlayHTMLelement = document.getElementsByClassName("control-pause-start");
+    startPlayHTMLelement[0].innerHTML = playButtonHTML;
 }
 
 function addSecond() {
@@ -33,16 +72,15 @@ function addSecond() {
         seconds = 0;
         scaleToZero(secondsId);
         addMinutes();
-    }
-    // console.log(seconds);
+    } 
 }
 
 function updateScale(id, unit) {
-    document.getElementById(id).innerText = unit < 10 ? '0' + unit : unit; 
+    document.getElementById(id).innerText = unit < 10 ? '0' + unit : unit;
 }
 
 function scaleToZero(id) {
-     document.getElementById(id).innerText = '00'; 
+    document.getElementById(id).innerText = '00';
 }
 
 function addMinutes() {
@@ -50,9 +88,9 @@ function addMinutes() {
     if (minutes < MAX_MINUTES) {
         updateScale(minutesId, minutes);
     } else {
-       minutes = 0; 
-       scaleToZero(minutesId);
-       addHour();
+        minutes = 0;
+        scaleToZero(minutesId);
+        addHour();
     }
 }
 
@@ -72,18 +110,15 @@ function addDay() {
     if (days < MAX_DAYS) {
         updateScale(daysId, days);
     } else {
-      days = 0;
-      scaleToZero(daysId);  
+        days = 0;
+        scaleToZero(daysId);
     }
-}
- 
-
-function pauseChronometer() {
-    clearInterval(intervalID);
 }
 
 function clearChronometer() {
     pauseChronometer();
+    changeToPlayButton();
+    startPauseState = true;
     seconds = 0;
     minutes = 0;
     hours = 0;
@@ -99,7 +134,7 @@ function SoundReproduction() {
     if (soundSelector) {
         tick_audio.play();
     } else {
-        tock_audio.play(); 
+        tock_audio.play();
     }
     soundSelector = !soundSelector;
 }

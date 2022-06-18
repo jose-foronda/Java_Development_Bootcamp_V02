@@ -111,7 +111,7 @@ h1 {
     grid-auto-rows: auto;
     grid-auto-columns: max-content;
     width: 100%;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
 
     /* source: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout */
     grid-column: 1 / 2;
@@ -139,6 +139,11 @@ h1 {
     grid-row: 1/2;
 }
 
+.control-pause-start{
+    border: 0px;
+    grid-column: 1/2;
+}
+
 .screen-box {
     margin-top: 10%;
     display: grid;
@@ -156,33 +161,47 @@ h1 {
     box-sizing: border-box;
     font-size: 1rem;
     font-weight: bold;
-
     border-radius: 25% 10%;
-    border: 1px solid #527FFF;
+    border: 0px solid #527FFF;
     /* background-color: #E86209; */
     background-color: white;
 }
 
-.control:hover {
+.control:hover { 
     border-radius: 10%/50%;
     background-color: #51557E;
 }
 
-
-#start:hover {
-    border: 1px solid green;
+.start-pause {
+    display: grid;
+    grid-template-columns: 1fr;
 }
 
 #pause:hover {
-    border: 1px solid #007EB9;
-
+    border: 0px solid #007EB9; 
 }
 
 #stop:hover {
-    border: 1px solid #B20600;
+    border: 0px solid #B20600;
 }
 
-.control .material-icons, .control .material-symbols-outlined, .control .material-symbols-sharp {
-    font-size: 48px;
+.control .material-icons,
+.control .material-symbols-outlined,
+.control .material-symbols-sharp {
+    font-size: 48px; 
     /* Preferred icon size */
-} 
+}
+
+.control .material-icons,
+.control .material-symbols-outlined{
+    grid-column: 1/2;
+    /* Preferred icon size */
+}
+
+.control .material-icons:hover,
+.control .material-symbols-outlined:hover,
+.control .material-symbols-sharp:hover{ 
+    color: #EC690E;
+    /* Preferred icon size */
+}
+ 
