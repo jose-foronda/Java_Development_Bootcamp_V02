@@ -1,0 +1,53 @@
+table {
+    font-family: 'Courier New', Courier, monospace;
+    border-collapse: collapse;
+    width: 80%;
+    margin: auto;
+}
+
+th {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+    color: black;
+    background-color: #F17214;
+}
+
+tr th:hover {
+    background-color: rgb(35, 47, 62);
+    color: #F17214;
+
+}
+
+#searchLink{ 
+    color: black;
+    text-decoration: none;
+}
+
+#searchLink:hover {
+    /* background-color: rgb(35, 47, 62); */
+    color: #F17214; 
+}
+
+tr,th{
+    border: 5px solid white;
+}
+
+tr:nth-child(even){
+    background-color: #007FAA;
+}
+
+tr:nth-child(odd){
+    background-color: #E5EAEF;
+    color: black;
+}
+
+tr:hover{
+    background-color: rgb(35, 47, 62);
+    color: #F17214;
+    font-weight: bold;
+}
+
+section{
+    text-align: center;
+}

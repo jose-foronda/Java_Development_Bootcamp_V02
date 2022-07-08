@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/styles1.css">
+</head>
+
+<body>
+    <h1> Search text in a WEB page</h1>
+    <nav>
+        <div id="searchHistoryContainer">
+            <a id="searchHistory" href="searchesHistory.jsp">List Search History</a>
+        </div>
+    </nav>
+
+    <form action="SearchText" method="post" id="form">
+        <input type="text" name="searchedText" id="searchedText" placeholder="Text to search" required>
+        <input type="text" name="searchedURL" id="searchedURL" placeholder="site's URL" required>
+        <input type="submit" name="searchButton" id="searchButton" value="Search">
+    </form>
+</body>
+
+</html>

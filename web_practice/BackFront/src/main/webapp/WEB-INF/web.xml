@@ -4,4 +4,14 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>SearchText</servlet-name>
+  	<display-name>SearchText</display-name>
+  	<description></description>
+  	<servlet-class>com.protalento.servlets.SearchText</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>SearchText</servlet-name>
+  	<url-pattern>/SearchText</url-pattern>
+  </servlet-mapping>
 </web-app>

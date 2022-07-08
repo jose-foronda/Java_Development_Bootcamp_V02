@@ -1,0 +1,19 @@
+
+body{
+    background-color: #232F3E;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;  
+}
+h1, a{
+    color: #E58E2E; 
+    align-items: center;
+    justify-content: center;
+}
+
+/* #searchedURL, #searchedText{ 
+    quotes: "«" "»";
+} */
+
+#searchedURL:hover, #searchedText:hover{
+    color: aliceblue;
+}

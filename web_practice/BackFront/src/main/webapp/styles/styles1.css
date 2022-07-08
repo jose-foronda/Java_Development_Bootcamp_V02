@@ -1,0 +1,71 @@
+
+body{
+    background-color: #232F3E;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;  
+}
+
+h1, h2{
+    color: #E58E2E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#form{  
+    margin-top: 10%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 80%);
+    /* grid-auto-rows: minmax(1000px, auto); */
+    gap: 10%;
+}
+
+#searchedText{   
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+#searchedText, #searchedURL, #searchButton{ 
+    box-sizing: border-box; 
+    border: 3px solid transparent; 
+    width: 100%;
+    height: 100%; 
+}
+
+#searchedText:hover, #searchedURL:hover, #searchButton:hover{
+    box-sizing: border-box;   
+    width: 100%;
+    height: 100%; 
+    border: 3px solid #E58E2E; 
+    border-radius: 4px;
+}
+
+#searchedURL{   
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+#searchButton{  
+    grid-column: 2/3;
+    grid-row: 3/4;
+} 
+
+#searchButton:hover{
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%; 
+    font-weight: bold;
+    border-color: #E58E2E;
+    background-color: #E58E2E;
+}  
+
+#searchHistory{ 
+    margin-top: 5%;  
+    color:#E58E2E;
+    text-decoration-line: none;
+}
+
+#searchHistoryContainer{  
+    text-align: center;
+}
