@@ -1,0 +1,19 @@
+button{ 
+border-color: aliceblue;
+padding: auto;
+border-radius: 4px;
+cursor:pointer;
+
+}
+
+.warning:hover{
+    background-color: rgb(0,115,187);
+}
+
+.danger:hover{
+    background-color:#D32F2F;
+}
+
+.success:hover{
+    background-color: green;
+}

@@ -4,4 +4,44 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>SessionValidation</servlet-name>
+  	<display-name>SessionValidation</display-name>
+  	<description></description>
+  	<servlet-class>com.protalento.servlets.SessionValidation</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>EmployeeAction</servlet-name>
+  	<display-name>EmployeeAction</display-name>
+  	<description></description>
+  	<servlet-class>com.protalento.servlets.EmployeeAction</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>EmployeeRegisterClean</servlet-name>
+  	<display-name>EmployeeRegisterClean</display-name>
+  	<description></description>
+  	<servlet-class>com.protalento.servlets.EmployeeRegisterClean</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>GenerateCSV</servlet-name>
+  	<display-name>GenerateCSV</display-name>
+  	<description></description>
+  	<servlet-class>com.protalento.servlets.GenerateCSV</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>SessionValidation</servlet-name>
+  	<url-pattern>/SessionValidation</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>EmployeeAction</servlet-name>
+  	<url-pattern>/EmployeeAction</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>EmployeeRegisterClean</servlet-name>
+  	<url-pattern>/EmployeeRegisterClean</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>GenerateCSV</servlet-name>
+  	<url-pattern>/GenerateCSV</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -1,0 +1,75 @@
+#employeeForm{  
+    margin-top: 5%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(6, 25%) repeat(2, 25%);
+    /* grid-auto-rows: minmax(1000px, auto); */
+    gap: 8%;
+}
+
+#DocumentType{   
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+#DocNumber{   
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+#employeeName{   
+    grid-column: 2/3;
+    grid-row: 3/4;
+}
+
+#employeeLastName{   
+    grid-column: 2/3;
+    grid-row: 4/5;
+}
+
+#employeeAge{   
+    grid-column: 2/3;
+    grid-row: 5/6;
+}
+
+#employeeBirthDay{   
+    grid-column: 2/3;
+    grid-row: 6/7;
+}
+
+#employeeStore{   
+    grid-column: 2/3;
+    grid-row: 7/8;
+}
+
+#employeeReset{   
+    grid-column: 2/3;
+    grid-row: 8/9;
+}
+ 
+
+#DocumentType, #DocNumber, #employeeName, #employeeLastName, #employeeAge, #employeeBirthDay,
+#employeeStore, #employeeReset{ 
+    box-sizing: border-box; 
+    border: 3px solid transparent; 
+    width: 100%;
+    height: 100%; 
+}
+
+#DocumentType:hover, #DocNumber:hover, #employeeName:hover, #employeeLastName:hover,
+#employeeAge:hover, #employeeBirthDay:hover, #employeeStore:hover, #employeeReset:hover{
+    box-sizing: border-box;   
+    width: 100%;
+    height: 100%; 
+    border: 3px solid #E58E2E; 
+    border-radius: 4px;
+} 
+
+#employeeStore:hover, #employeeReset:hover{
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%; 
+    font-weight: bold;
+    border-color: #E58E2E;
+    background-color: #E58E2E;
+}  

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/welcome.css"> 
+</head>
+<body>
+    <h1>Welcome</h1> 
+    <h1> User: 
+        <%=systemUser.getEmail()%>
+    </h1>
+        <h1>
+        You are going to be redirected in 5 seconds. Please wait SHIT.
+        </h1>
+        
+        <div class="screen-box">
+           <div class="wrapper-box ">
+                   <div class="time-wrapper grid-element"> 
+                       <div id="seconds" class="orangeDefault">
+                           5
+                       </div>
+                   </div> 
+            </div>
+       </div> 
+   
+    <script src="scripts/chronometerBehavior.js"></script>
+</body>
+</html>

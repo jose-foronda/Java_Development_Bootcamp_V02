@@ -1,0 +1,67 @@
+html {
+    font-size: 100%;
+}
+
+body {
+    background-color: #37475A;
+    /*#37475A;   #232F3E*/
+    width: 100%;
+    height: 100%;
+}
+
+h1 {
+    text-align: center;
+    color: #EC690E; 
+    font-size: 130%;
+} 
+
+.time-wrapper {
+    /* background-color: #007EB9; */
+    background-color: #37475A;
+    box-sizing: border-box;
+    padding: 5%;
+    font-weight: bold;
+    font-size: 700%;
+    width: 100%; 
+
+    grid-column: 1 / 2;
+    grid-row: 1 / 2; 
+        /* source: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout */
+    /* start_row / end_row */
+/* start_column / end_column */
+
+ } 
+
+.orangeDefault{
+    background-color: #EC690E;
+    transform: 1100%;
+ }
+ 
+
+.wrapper-box {
+    /* margin-top: 10%;     */
+    text-align: center;
+    
+    margin: 1%;
+    box-sizing: border-box;
+    border: 5px transparent;
+    border-radius: 0%;
+    font-weight: bold;
+    display: grid; 
+    background-color: #37475A; 
+    width: 100%;
+    height: 100%;
+
+    /* grid-auto-rows: 100%; */
+    grid-column: 2 / 3;
+    grid-row: 1/2;
+}
+
+.screen-box {
+    align-items: center;
+    margin-top: 10%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; 
+    background-color: #37475A;
+} 
+ 
